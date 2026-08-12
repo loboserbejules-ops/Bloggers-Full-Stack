@@ -20,8 +20,8 @@
 
     <!-- Posts Feed -->
     <div class="col-12">
-      <h2 class="mb-3">All Posts</h2>
-      <div v-if="posts.length === 0" class="alert alert-warning">No posts found.</div>
+      <h2 class="mb-3">Active Posts</h2>
+      <div v-if="posts.length === 0" class="alert alert-warning">No active posts found.</div>
       
       <div v-for="post in posts" :key="post._id" class="card mb-3">
         <div class="card-body">
@@ -56,7 +56,7 @@ const notyf = new Notyf({ duration: 3000 });
 
 const fetchPosts = async () => {
   try {
-    const res = await api.get('/posts');
+    const res = await api.get('/posts/active');
     posts.value = res.data;
   } catch (err) {
     notyf.error('Failed to load posts');
