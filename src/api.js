@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'https://bloggers-full-stack.onrender.com',
+  baseURL: 'https://bloggers-api-6ssa.onrender.com',
   headers: {
     'Content-Type': 'application/json'
   }
